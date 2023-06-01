@@ -1,0 +1,70 @@
+complexity:
+  LongParameterList:
+    excludes:
+      - "**/test/**"
+      - "**/testFixtures/**"
+    constructorThreshold: 8
+  TooManyFunctions:
+    excludes:
+      - "**/test/**"
+      - "**/testFixtures/**"
+    thresholdInInterfaces: 15
+    thresholdInObjects: 15
+    thresholdInClasses: 15
+  LongMethod:
+    excludes:
+      - "**/test/**"
+      - "**/testFixtures/**"
+
+style:
+  MagicNumber:
+    excludes:
+      - "**/test/**"
+      - "**/testFixtures/**"
+  UnnecessaryAbstractClass:
+    active: false
+  UtilityClassWithPublicConstructor:
+    active: false
+  MaxLineLength:
+    active: false
+  UnusedPrivateMember:
+    active: false
+  CollapsibleIfStatements:
+    active: true
+  ExplicitCollectionElementAccessMethod:
+    active: true
+  UnnecessaryFilter:
+    active: true
+  UseAnyOrNoneInsteadOfFind:
+    active: true
+  UseDataClass:
+    active: true
+    allowVars: true
+  UseIfEmptyOrIfBlank:
+    active: true
+  UseIsNullOrEmpty:
+    active: true
+  UseOrEmpty:
+    active: true
+  DataClassShouldBeImmutable:
+    active: true
+
+naming:
+  MatchingDeclarationName:
+    active: false
+
+formatting:
+  Indentation:
+    active: false
+  Filename:
+    active: false
+
+empty-blocks:
+  EmptyFunctionBlock:
+    active: false
+
+coroutines:
+  RedundantSuspendModifier:
+    active: true
+  GlobalCoroutineUsage:
+    active: true
