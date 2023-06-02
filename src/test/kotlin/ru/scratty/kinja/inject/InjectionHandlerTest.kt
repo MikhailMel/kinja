@@ -86,7 +86,6 @@ a (ru.scratty.kinja.inject.InjectionHandlerTest.CircularA)"""
 
     class TestD(val testA: TestA, val testB: TestB, val c: TestC)
 
-
     @Suppress("UNUSED_PARAMETER")
     class CircularA(b: CircularB)
 
