@@ -1,4 +1,5 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.8.21-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
+[![JitPack](https://jitpack.io/v/mynameisscr/kinja.svg)](https://jitpack.io/#mynameisscr/kinja)
 
 ## Kinja
 
@@ -12,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.mynameisscr:kinja:0.0.1")
+    implementation("com.github.mynameisscr:kinja:v0.0.1")
 }
 ```
 
