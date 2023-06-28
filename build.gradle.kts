@@ -13,12 +13,13 @@ plugins {
 
     id(Plugins.update_dependencies) version PluginVers.update_dependencies
     id(Plugins.detekt) version PluginVers.detekt
+    id(Plugins.jacoco)
 
     `maven-publish`
 }
 
 group = "com.github.mynameisscr"
-version = "0.0.1"
+version = "v0.0.2"
 
 repositories {
     mavenCentral()
@@ -29,6 +30,7 @@ dependencies {
 
     testImplementation(Libs.kotlin_test)
     testImplementation(Libs.kotest_assertions_core_jvm)
+    testImplementation(Libs.mockk)
 }
 
 java {
@@ -100,15 +102,15 @@ tasks {
 
     withType<KotlinCompile> {
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_17.toString()
+            jvmTarget = JavaVersion.VERSION_11.toString()
             allWarningsAsErrors = failOnWarning
             freeCompilerArgs = listOf("-Xjvm-default=enable")
         }
     }
 
     withType<JavaCompile> {
-        sourceCompatibility = JavaVersion.VERSION_17.toString()
-        targetCompatibility = JavaVersion.VERSION_17.toString()
+        sourceCompatibility = JavaVersion.VERSION_11.toString()
+        targetCompatibility = JavaVersion.VERSION_11.toString()
 
         options.compilerArgs.add("-Xlint:all")
     }
@@ -123,5 +125,21 @@ tasks {
             showStandardStreams = true
             exceptionFormat = TestExceptionFormat.FULL
         }
+
+        finalizedBy(this@tasks.jacocoTestReport)
+    }
+
+    jacocoTestReport {
+        dependsOn(withType<Test>())
+
+        classDirectories.setFrom(
+            files(classDirectories.files.map {
+                fileTree(it) {
+                    exclude(
+                        "**/uuid/**",
+                    )
+                }
+            })
+        )
     }
 }

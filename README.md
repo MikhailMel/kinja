@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.mynameisscr:kinja:v0.0.1")
+    implementation("com.github.mynameisscr:kinja:v0.0.2")
 }
 ```
 

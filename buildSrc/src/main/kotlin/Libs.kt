@@ -2,6 +2,8 @@ object LibVers {
     const val kotlin_version = "1.8.21"
 
     const val kotest = "5.6.2"
+
+    const val mockk = "1.13.5"
 }
 
 object Libs {
@@ -11,4 +13,5 @@ object Libs {
     // Tests
     const val kotlin_test = "org.jetbrains.kotlin:kotlin-test:${LibVers.kotlin_version}"
     const val kotest_assertions_core_jvm = "io.kotest:kotest-assertions-core-jvm:${LibVers.kotest}"
+    const val mockk = "io.mockk:mockk:${LibVers.mockk}"
 }
