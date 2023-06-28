@@ -102,15 +102,15 @@ tasks {
 
     withType<KotlinCompile> {
         kotlinOptions {
-            jvmTarget = JavaVersion.VERSION_17.toString()
+            jvmTarget = JavaVersion.VERSION_11.toString()
             allWarningsAsErrors = failOnWarning
             freeCompilerArgs = listOf("-Xjvm-default=enable")
         }
     }
 
     withType<JavaCompile> {
-        sourceCompatibility = JavaVersion.VERSION_17.toString()
-        targetCompatibility = JavaVersion.VERSION_17.toString()
+        sourceCompatibility = JavaVersion.VERSION_11.toString()
+        targetCompatibility = JavaVersion.VERSION_11.toString()
 
         options.compilerArgs.add("-Xlint:all")
     }
