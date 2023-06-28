@@ -17,6 +17,8 @@ complexity:
       - "**/testFixtures/**"
 
 style:
+  ReturnCount:
+    max: 4
   MagicNumber:
     excludes:
       - "**/test/**"
